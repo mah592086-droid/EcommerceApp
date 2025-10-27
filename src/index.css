@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+/* stylelint-disable-next-line at-rule-no-unknown */
+@tailwind base;
+/* stylelint-disable-next-line at-rule-no-unknown */
+@tailwind components;
+/* stylelint-disable-next-line at-rule-no-unknown */
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-neon-purple via-electric-500 to-neon-teal text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-neon-purple/50;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-neon-teal text-neon-teal font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-neon-teal hover:text-white hover:shadow-xl hover:shadow-neon-teal/30;
+  }
+  
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-effect-dark {
+    @apply bg-black/20 backdrop-blur-xl border border-white/10;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-electric-400 via-white to-electric-400 bg-clip-text text-transparent;
+  }
+  
+  .hero-text-shadow {
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-glow {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.3);
+  }
+}
