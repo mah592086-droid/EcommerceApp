@@ -240,22 +240,22 @@ const Checkout = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      <div className="pt-24 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Checkout</h1>
+      <div className="pt-20 sm:pt-24 pb-8 sm:pb-12">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 sm:mb-8">Checkout</h1>
 
           <form onSubmit={handleSubmit}>
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid lg:grid-cols-3 gap-4 sm:gap-8">
               {/* Left - Forms */}
-              <div className="lg:col-span-2 space-y-6">
+              <div className="lg:col-span-2 space-y-4 sm:space-y-6">
                 {/* Shipping Information */}
                 <Card>
-                  <div className="flex items-center gap-3 mb-6">
-                    <MapPin className="w-6 h-6 text-purple-600" />
-                    <h2 className="text-2xl font-bold text-gray-900">Shipping Information</h2>
+                  <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Shipping Information</h2>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <Input
                       label="Full Name"
                       name="fullName"
@@ -289,7 +289,7 @@ const Checkout = () => {
                       value={formData.address}
                       onChange={handleInputChange}
                       error={errors.address}
-                      className="md:col-span-2"
+                      className="sm:col-span-2"
                       required
                     />
                     <Input
@@ -328,12 +328,12 @@ const Checkout = () => {
 
                 {/* Payment Information */}
                 <Card>
-                  <div className="flex items-center gap-3 mb-6">
-                    <CreditCard className="w-6 h-6 text-purple-600" />
-                    <h2 className="text-2xl font-bold text-gray-900">Payment Information</h2>
+                  <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                    <CreditCard className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Payment Information</h2>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <Input
                       label="Card Number"
                       name="cardNumber"
@@ -341,7 +341,7 @@ const Checkout = () => {
                       onChange={handleInputChange}
                       error={errors.cardNumber}
                       placeholder="1234 5678 9012 3456"
-                      className="md:col-span-2"
+                      className="sm:col-span-2"
                       required
                     />
                     <Input
@@ -350,7 +350,7 @@ const Checkout = () => {
                       value={formData.cardName}
                       onChange={handleInputChange}
                       error={errors.cardName}
-                      className="md:col-span-2"
+                      className="sm:col-span-2"
                       required
                     />
                     <Input
@@ -399,9 +399,9 @@ const Checkout = () => {
 
               {/* Right - Order Summary */}
               <div className="lg:col-span-1">
-                <div className="sticky top-24">
+                <div className="sticky top-20 sm:top-24">
                   <Card variant="elevated">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Order Summary</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Order Summary</h2>
 
                     {/* Cart Items */}
                     <div className="space-y-3 mb-6 max-h-64 overflow-y-auto">

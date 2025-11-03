@@ -206,18 +206,19 @@ const AdminProducts = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      <div className="pt-24 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="pt-20 sm:pt-24 pb-8 sm:pb-12">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
           {/* Header */}
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 sm:mb-8">
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">Product Management</h1>
-              <p className="text-gray-600">{filteredProducts.length} products</p>
+              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Product Management</h1>
+              <p className="text-base sm:text-lg text-gray-600">{filteredProducts.length} products</p>
             </div>
             <Button
               variant="primary"
               icon={<Plus />}
               onClick={() => handleOpenModal()}
+              className="w-full sm:w-auto"
             >
               Add New Product
             </Button>
@@ -239,16 +240,16 @@ const AdminProducts = () => {
             <Loading size="lg" text="Loading products..." />
           ) : (
             <Card>
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto -mx-3 sm:mx-0">
+                <table className="w-full min-w-[640px]">
                   <thead>
                     <tr className="border-b border-gray-200">
-                      <th className="text-left py-4 px-4">Product</th>
-                      <th className="text-left py-4 px-4">Category</th>
-                      <th className="text-left py-4 px-4">Price</th>
-                      <th className="text-left py-4 px-4">Stock</th>
-                      <th className="text-left py-4 px-4">Status</th>
-                      <th className="text-right py-4 px-4">Actions</th>
+                      <th className="text-left py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Product</th>
+                      <th className="text-left py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Category</th>
+                      <th className="text-left py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Price</th>
+                      <th className="text-left py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Stock</th>
+                      <th className="text-left py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Status</th>
+                      <th className="text-right py-3 sm:py-4 px-3 sm:px-4 text-sm sm:text-base">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -260,32 +261,32 @@ const AdminProducts = () => {
                         animate="visible"
                         className="border-b border-gray-100 hover:bg-gray-50"
                       >
-                        <td className="py-4 px-4">
+                        <td className="py-3 sm:py-4 px-3 sm:px-4">
                           <div>
-                            <div className="font-medium text-gray-900">{product.name}</div>
-                            <div className="text-sm text-gray-500 line-clamp-1">
+                            <div className="font-medium text-sm sm:text-base text-gray-900">{product.name}</div>
+                            <div className="text-xs sm:text-sm text-gray-500 line-clamp-1">
                               {product.description}
                             </div>
                           </div>
                         </td>
-                        <td className="py-4 px-4">
-                          <div className="text-sm">
+                        <td className="py-3 sm:py-4 px-3 sm:px-4">
+                          <div className="text-xs sm:text-sm">
                             <div className="font-medium text-gray-900">{product.category}</div>
                             {product.subcategory && (
                               <div className="text-gray-500">{product.subcategory}</div>
                             )}
                           </div>
                         </td>
-                        <td className="py-4 px-4">
-                          <span className="font-bold text-purple-600">${product.price}</span>
+                        <td className="py-3 sm:py-4 px-3 sm:px-4">
+                          <span className="font-bold text-sm sm:text-base text-purple-600">${product.price}</span>
                         </td>
-                        <td className="py-4 px-4">
-                          <span className={`${product.stock < 10 ? 'text-red-600' : 'text-gray-900'}`}>
+                        <td className="py-3 sm:py-4 px-3 sm:px-4">
+                          <span className={`text-xs sm:text-sm ${product.stock < 10 ? 'text-red-600' : 'text-gray-900'}`}>
                             {product.stock || 0}
                           </span>
                         </td>
-                        <td className="py-4 px-4">
-                          <div className="flex flex-wrap gap-2">
+                        <td className="py-3 sm:py-4 px-3 sm:px-4">
+                          <div className="flex flex-wrap gap-1 sm:gap-2">
                             {product.featured && <Badge variant="warning" size="sm">Featured</Badge>}
                             {product.inStock !== false ? (
                               <Badge variant="success" size="sm">In Stock</Badge>
@@ -294,23 +295,25 @@ const AdminProducts = () => {
                             )}
                           </div>
                         </td>
-                        <td className="py-4 px-4">
-                          <div className="flex justify-end gap-2">
+                        <td className="py-3 sm:py-4 px-3 sm:px-4">
+                          <div className="flex justify-end gap-1 sm:gap-2">
                             <Button
                               size="sm"
                               variant="outline"
-                              icon={<Edit className="w-4 h-4" />}
+                              icon={<Edit className="w-3 h-3 sm:w-4 sm:h-4" />}
                               onClick={() => handleOpenModal(product)}
+                              className="text-xs sm:text-sm px-2 sm:px-3"
                             >
-                              Edit
+                              <span className="hidden sm:inline">Edit</span>
                             </Button>
                             <Button
                               size="sm"
                               variant="danger"
-                              icon={<Trash2 className="w-4 h-4" />}
+                              icon={<Trash2 className="w-3 h-3 sm:w-4 sm:h-4" />}
                               onClick={() => handleDeleteClick(product.id)}
+                              className="text-xs sm:text-sm px-2 sm:px-3"
                             >
-                              Delete
+                              <span className="hidden sm:inline">Delete</span>
                             </Button>
                           </div>
                         </td>

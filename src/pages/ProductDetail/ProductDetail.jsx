@@ -87,18 +87,18 @@ const ProductDetail = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      <div className="pt-24 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="pt-20 sm:pt-24 pb-8 sm:pb-12">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
           {/* Back Button */}
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-gray-600 hover:text-purple-600 mb-6 transition-colors"
+            className="flex items-center gap-2 text-gray-600 hover:text-purple-600 mb-4 sm:mb-6 transition-colors text-sm sm:text-base"
           >
-            <ArrowLeft className="w-5 h-5" />
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             <span>Back</span>
           </button>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-12">
             {/* Left - Images & 3D Viewer */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -126,7 +126,7 @@ const ProductDetail = () => {
 
               {/* Image Thumbnails */}
               {product.images && product.images.length > 1 && (
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid grid-cols-4 sm:grid-cols-4 gap-2 sm:gap-4">
                   {product.images.map((image, index) => (
                     <button
                       key={index}
@@ -167,17 +167,17 @@ const ProductDetail = () => {
 
               {/* Title */}
               <div>
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
                   {product.name}
                 </h1>
                 
                 {/* Rating */}
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-5 h-5 ${
+                        className={`w-4 h-4 sm:w-5 sm:h-5 ${
                           i < (product.rating || 4)
                             ? 'text-yellow-400 fill-yellow-400'
                             : 'text-gray-300'
@@ -185,23 +185,23 @@ const ProductDetail = () => {
                       />
                     ))}
                   </div>
-                  <span className="text-gray-600">
+                  <span className="text-sm sm:text-base text-gray-600">
                     ({product.reviewCount || 0} reviews)
                   </span>
                 </div>
               </div>
 
               {/* Price */}
-              <div className="flex items-baseline gap-4">
-                <span className="text-4xl font-bold text-purple-600">
+              <div className="flex items-baseline gap-3 sm:gap-4 flex-wrap">
+                <span className="text-3xl sm:text-4xl font-bold text-purple-600">
                   ${product.price}
                 </span>
                 {product.originalPrice && product.originalPrice > product.price && (
                   <>
-                    <span className="text-2xl text-gray-400 line-through">
+                    <span className="text-xl sm:text-2xl text-gray-400 line-through">
                       ${product.originalPrice}
                     </span>
-                    <Badge variant="danger">
+                    <Badge variant="danger" className="text-xs sm:text-sm">
                       {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
                     </Badge>
                   </>
@@ -244,35 +244,35 @@ const ProductDetail = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Quantity
                 </label>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
                   <div className="flex items-center border border-gray-300 rounded-lg">
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="px-4 py-2 hover:bg-gray-100 transition-colors"
+                      className="px-3 sm:px-4 py-2 hover:bg-gray-100 transition-colors text-base sm:text-lg"
                     >
                       -
                     </button>
-                    <span className="px-6 py-2 font-medium">{quantity}</span>
+                    <span className="px-4 sm:px-6 py-2 font-medium text-sm sm:text-base">{quantity}</span>
                     <button
                       onClick={() => setQuantity(quantity + 1)}
-                      className="px-4 py-2 hover:bg-gray-100 transition-colors"
+                      className="px-3 sm:px-4 py-2 hover:bg-gray-100 transition-colors text-base sm:text-lg"
                     >
                       +
                     </button>
                   </div>
-                  <span className="text-gray-600 text-sm">
+                  <span className="text-gray-600 text-xs sm:text-sm">
                     {product.stock ? `${product.stock} available` : 'Limited stock'}
                   </span>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button
                   variant="primary"
                   size="lg"
                   fullWidth
-                  icon={<ShoppingCart />}
+                  icon={<ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5" />}
                   onClick={handleAddToCart}
                   disabled={product.inStock === false}
                 >
@@ -290,7 +290,7 @@ const ProductDetail = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  icon={<Heart />}
+                  icon={<Heart className="w-4 h-4 sm:w-5 sm:h-5" />}
                   className="sm:w-auto"
                 >
                   

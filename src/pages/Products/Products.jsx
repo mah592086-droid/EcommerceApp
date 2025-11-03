@@ -121,14 +121,14 @@ const Products = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      <div className="pt-24 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="pt-20 sm:pt-24 pb-8 sm:pb-12">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
           {/* Page Header */}
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <div className="mb-6 sm:mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
               {selectedCategory ? `${activeCategory?.name}` : 'All Products'}
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg sm:text-xl text-gray-600">
               {filteredProducts.length} products available
             </p>
           </div>
@@ -293,7 +293,7 @@ const Products = () => {
             <motion.div
               initial="hidden"
               animate="visible"
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
             >
               {filteredProducts.map((product) => (
                 <motion.div
@@ -335,13 +335,14 @@ const Products = () => {
                       {product.description}
                     </p>
 
-                    <div className="flex items-center justify-between">
-                      <span className="text-2xl font-bold text-purple-600">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-xl sm:text-2xl font-bold text-purple-600">
                         ${product.price}
                       </span>
                       <Button
                         size="sm"
                         onClick={(e) => handleAddToCart(product.id, e)}
+                        className="text-xs sm:text-sm px-3 sm:px-4"
                       >
                         Add to Cart
                       </Button>

@@ -65,34 +65,34 @@ const Modal = ({
           />
 
           {/* Modal */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 pointer-events-none">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: 'spring', duration: 0.5 }}
-              className={`bg-white rounded-2xl shadow-2xl w-full ${sizes[size]} max-h-[90vh] overflow-hidden pointer-events-auto ${className}`}
+              className={`bg-white rounded-xl sm:rounded-2xl shadow-2xl w-full ${sizes[size]} max-h-[95vh] sm:max-h-[90vh] overflow-hidden pointer-events-auto ${className}`}
             >
               {/* Header */}
               {(title || showCloseButton) && (
-                <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
                   {title && (
-                    <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 pr-2">{title}</h2>
                   )}
                   {showCloseButton && (
                     <button
                       onClick={onClose}
-                      className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                      className="p-1.5 sm:p-2 hover:bg-gray-100 rounded-lg transition-colors flex-shrink-0"
                       aria-label="Close modal"
                     >
-                      <X className="w-6 h-6 text-gray-500" />
+                      <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-500" />
                     </button>
                   )}
                 </div>
               )}
 
               {/* Content */}
-              <div className="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+              <div className="p-4 sm:p-6 overflow-y-auto max-h-[calc(95vh-120px)] sm:max-h-[calc(90vh-140px)]">
                 {children}
               </div>
             </motion.div>

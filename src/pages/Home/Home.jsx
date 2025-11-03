@@ -177,8 +177,8 @@ const Home = () => {
           </motion.div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-12 sm:py-20">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-12 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -189,20 +189,20 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full px-4 py-2 mb-6"
+                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6"
               >
-                <TrendingUp className="w-4 h-4 text-cyan-400" />
-                <span className="text-white text-sm font-medium">Trending Now</span>
+                <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
+                <span className="text-white text-xs sm:text-sm font-medium">Trending Now</span>
               </motion.div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                 Shop the
                 <span className="block bg-gradient-to-r from-cyan-400 to-purple-400 text-transparent bg-clip-text">
                   Future Today
                 </span>
               </h1>
 
-              <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 leading-relaxed">
                 Experience shopping like never before with our immersive 3D product views, 
                 cutting-edge technology, and unbeatable prices.
               </p>
@@ -276,18 +276,18 @@ const Home = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-12 sm:py-20 px-3 sm:px-4 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
               Shop by Category
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg sm:text-xl text-gray-600">
               Discover our wide range of products across multiple categories
             </p>
           </motion.div>
@@ -297,7 +297,7 @@ const Home = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           >
             {ALL_CATEGORIES.map((category) => (
               <motion.div key={category.id} variants={FADE_IN_UP}>
@@ -329,18 +329,18 @@ const Home = () => {
       </section>
 
       {/* Featured Products Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-20 px-3 sm:px-4 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
               Featured Products
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg sm:text-xl text-gray-600">
               Check out our handpicked selection of trending items
             </p>
           </motion.div>
@@ -353,7 +353,7 @@ const Home = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
             >
               {featuredProducts.map((product) => (
                 <motion.div key={product.id} variants={FADE_IN_UP}>
@@ -407,33 +407,33 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50">
+      <section className="py-12 sm:py-20 px-3 sm:px-4 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             variants={STAGGER_CONTAINER}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
           >
             {[
               {
-                icon: <Truck className="w-8 h-8" />,
+                icon: <Truck className="w-6 h-6 sm:w-8 sm:h-8" />,
                 title: 'Free Shipping',
                 description: 'On orders over $50'
               },
               {
-                icon: <Shield className="w-8 h-8" />,
+                icon: <Shield className="w-6 h-6 sm:w-8 sm:h-8" />,
                 title: 'Secure Payment',
                 description: '100% protected payments'
               },
               {
-                icon: <Clock className="w-8 h-8" />,
+                icon: <Clock className="w-6 h-6 sm:w-8 sm:h-8" />,
                 title: '24/7 Support',
                 description: 'Dedicated customer service'
               },
               {
-                icon: <TrendingUp className="w-8 h-8" />,
+                icon: <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8" />,
                 title: 'Best Prices',
                 description: 'Competitive pricing guaranteed'
               }

@@ -87,8 +87,8 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-blue-900 flex items-center justify-center p-4">
-      <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-8 items-center">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-blue-900 flex items-center justify-center p-3 sm:p-4">
+      <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
         {/* Left - 3D Element & Branding */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -97,8 +97,8 @@ const Login = () => {
           className="hidden lg:block text-white"
         >
           <div className="mb-8">
-            <h1 className="text-5xl font-bold mb-4">Welcome Back!</h1>
-            <p className="text-xl text-gray-200">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4">Welcome Back!</h1>
+            <p className="text-lg sm:text-xl text-gray-200">
               Login to access your account and continue shopping
             </p>
           </div>
@@ -114,17 +114,17 @@ const Login = () => {
           animate="visible"
         >
           <Card variant="glass" className="backdrop-blur-xl">
-            <div className="text-center mb-8">
-              <Link to={ROUTES.HOME} className="inline-block mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl shadow-lg flex items-center justify-center mx-auto">
-                  <span className="text-white font-bold text-3xl">E</span>
+            <div className="text-center mb-6 sm:mb-8">
+              <Link to={ROUTES.HOME} className="inline-block mb-4 sm:mb-6">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl sm:rounded-2xl shadow-lg flex items-center justify-center mx-auto">
+                  <span className="text-white font-bold text-2xl sm:text-3xl">E</span>
                 </div>
               </Link>
-              <h2 className="text-3xl font-bold text-white mb-2">Login to Your Account</h2>
-              <p className="text-gray-300">Enter your credentials to continue</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Login to Your Account</h2>
+              <p className="text-sm sm:text-base text-gray-300">Enter your credentials to continue</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {errors.form && (
                 <div className="bg-red-500/20 border border-red-500 text-white rounded-lg p-4 text-sm">
                   {errors.form}
